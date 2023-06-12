@@ -1,6 +1,6 @@
 import fetch from "node-fetch";
 
-export const BASE_URL = "https://exbank.com";
+export const BASE_URL = "https://exbank.com/api/v1";
 const usersEndpoint = `${BASE_URL}/users`;
 const depositsEndpoint = `${BASE_URL}/deposits`;
 const withdrawsEndpoint = `${BASE_URL}/withdraws`;
