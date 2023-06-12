@@ -1,0 +1,29 @@
+{
+  "name": "yolo-exbanking",
+  "version": "1.0.0",
+  "description": "ExBanking API Testing ",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "\"\""
+  },
+  "keywords": [
+    "testing",
+    "supertest",
+    "mocha",
+    "chai"
+  ],
+  "author": "Martin Coronel",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "supertest": "^6.3.3"
+  },
+  "devDependencies": {
+    "msw": "^1.2.2"
+  }
+}
