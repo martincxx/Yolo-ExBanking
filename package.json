@@ -7,7 +7,7 @@
   "scripts": {
     "test": "mocha ./test/* --require @babel/register",
     "test:report": "mocha ./test/* --require @babel/register --reporter mochawesome",
-    "artillery:test": "dotenv -- artillery run --output performance-report/report.json performanceTests/artillery.yml && artillery report --output performance-report/report.html performance-report/report.json"
+    "artillery:test": "dotenv -- artillery run --output performanceTests/report.json performanceTests/artillery.yml && artillery report --output performanceTests/report.html performanceTests/report.json"
   },
   "repository": {
     "type": "git",

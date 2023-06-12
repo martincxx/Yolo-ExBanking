@@ -131,4 +131,5 @@ dist
 
 # reports
 mochawesome-report/
-performance-report/**
+performanceTests/report.html
+performanceTests/report.json
