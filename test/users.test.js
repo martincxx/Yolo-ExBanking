@@ -2,7 +2,7 @@
 import { expect } from "chai";
 import { describe } from "mocha";
 import { allUsers, newUser, getUserByCI } from "../src/api/bank.js";
-import { NEW_VALID_USER, EXISTING_USER, WRONG_USER } from "../src/mocks/new.js";
+import { NEW_VALID_USER, EXISTING_USER, WRONG_USER } from "../src/mocks/testData.js";
 
 
 describe("User testing", () => {
