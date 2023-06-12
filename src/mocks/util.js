@@ -1,8 +1,8 @@
 import { faker } from "@faker-js/faker";
 import { v4 as uuidv4 } from "uuid";
 
-export const createUserAccount = (a) => {
-  const user = { ...a };
+export const createUserAccount = (userDetails) => {
+  const user = { ...userDetails };
   user.account_number = faker.finance.accountNumber();
   user.balance = "15.00"
   user.user_id = uuidv4();
@@ -10,3 +10,12 @@ export const createUserAccount = (a) => {
   user.timestamp = new Date().toISOString();
   return user;
 };
+
+export const generateVoucherOfTransaction = (transactionDetails) =>{
+  const voucher = { ...transactionDetails };
+  voucher.tx_id = faker.string.numeric(15);
+  voucher.status = "Successfull";
+  voucher.balance = (parseFloat(voucher.balance) + parseFloat(voucher.amount)).toString();
+  voucher.timestamp = new Date().toISOString();
+  return voucher;
+}
