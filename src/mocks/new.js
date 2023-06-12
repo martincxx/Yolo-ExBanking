@@ -12,3 +12,6 @@ export const existingUser = {
     lastname: "Friesen",
     ci: "EXGHPN5XC8I",
   };
+
+
+export const WRONG_USER = "YIVPOR2"; 
