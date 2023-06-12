@@ -131,4 +131,4 @@ dist
 
 # reports
 mochawesome-report/
-performance-report/*
+performance-report/*.*
