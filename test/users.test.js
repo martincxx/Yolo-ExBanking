@@ -2,12 +2,17 @@
 import { expect } from "chai";
 import { describe } from "mocha";
 import { allUsers, newUser, getUserByCI } from "../src/api/bank.js";
-import { quentin } from "../src/mocks/new.js";
+import { quentin, existingUser } from "../src/mocks/new.js";
 
 describe("User testing", () => {
     it("EB01 - New User: Successful creation of a new  user", async () => {
       const res = await newUser(quentin);
       expect(res.status).to.equal(201);
+    });
+
+    it("EB02 - New User: Cannot create an already existing user", async () => {
+      const res = await newUser(existingUser);
+      expect(res.status).to.equal(409);
     });
   
     it("EB03 - Get all registered users", async () => {

@@ -7,10 +7,16 @@ const allUsers = users;
 
 export const handlers = [
   
-  rest.post(`${BASE_URL}/users`, (req, res, ctx) => {
-    const user = createUserAccount(JSON.parse(req.body));
-    allUsers.push(user);
+  rest.post(`${BASE_URL}/users`, async (req, res, ctx) => {
+    const { ci } = await req.json();
+    const user = allUsers.flatMap((user) => (user.ci == ci ? user : []));
+    if (user.length==1){
+      return res(ctx.status(409), ctx.json({ "Error": `User ${ci} already exists` }));
+    } else {
+    const newUser = createUserAccount(JSON.parse(req.body));
+    allUsers.push(newUser);
     return res(ctx.status(201));
+    }
   }),
 
   rest.get(`${BASE_URL}/users`, (req, res, ctx) => {
@@ -19,7 +25,7 @@ export const handlers = [
 
   rest.get(`${BASE_URL}/users/:userci`, (req, res, ctx)=>{
     const {userci} = req.params
-    let user = allUsers.flatMap(user => user.ci == userci ? user: [])
+    const user = allUsers.flatMap(user => user.ci == userci ? user: [])
     
     if (user.length ==1){
       return res(
