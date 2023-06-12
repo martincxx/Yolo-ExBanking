@@ -53,3 +53,35 @@ npm run artillery:test
 ```
 
 The generated report is available in the *performanceTests* folder.
+
+### Running on Docker
+
+**Important:** You need to have Docker installed and configured. If necessary refer to the [Docker Documentation](https://docs.docker.com/get-docker/) for your prefered platform.
+
+This project contains a two `Dockerfile`(s) The first one will be used if you feel like running the Functional Test Suite on Docker.
+
+First, build the `yolobanking` image.
+
+```bash
+docker build -f Dockerfile -t yoloexbanking:latest .
+```
+
+And now you can run Functional tests on a Docker container.
+
+```bash
+docker run -i -v $(pwd):/app -t yoloexbanking:latest npm run artillery:test
+```
+
+Note that there is a second `Dockerfile` (Dockerfile.load) that will be used to test the non-functional tests.
+Now, build the `Artillery` image.
+
+```bash
+docker build -f Dockerfile.load -t load-exbanking:latest .
+```
+
+And now you can run Functional tests on a Docker container.
+
+```bash
+docker run --platform linux/amd64 -i -v $(pwd):/app -t load-exbanking:latest
+
+```

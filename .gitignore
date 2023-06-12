@@ -133,3 +133,5 @@ dist
 mochawesome-report/
 performanceTests/report.html
 performanceTests/report.json
+
+.vscode/
