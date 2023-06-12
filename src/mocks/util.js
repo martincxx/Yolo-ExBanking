@@ -15,7 +15,6 @@ export const generateVoucherOfTransaction = (transactionDetails) =>{
   const voucher = { ...transactionDetails };
   voucher.tx_id = faker.string.numeric(15);
   voucher.status = "Successfull";
-  voucher.balance = (parseFloat(voucher.balance) + parseFloat(voucher.amount)).toString();
   voucher.timestamp = new Date().toISOString();
   return voucher;
 }

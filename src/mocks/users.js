@@ -40,7 +40,7 @@ export const users = [
     status: "active",
     user_id: "6f1b389c-339c-41ed-9e43-79c835667109",
     ci: "EXGHPN5XC8I",
-    balance: "480.00",
+    balance: "480.08",
     timestamp: "2020-01-16T18:44:03.641Z",
   },
   {

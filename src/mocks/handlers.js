@@ -41,7 +41,9 @@ export const handlers = [
     const user = allUsers.flatMap((user) =>
       user.account_number == account ? user : []
     )[0];
-    const balance = user.balance;
+    const balance = (
+      parseFloat(user.balance) + parseFloat(amount)
+    ).toString();
     if (parseFloat(amount) > 0 && user.status == "active") {
       const result = generateVoucherOfTransaction({account, amount, balance})
       return res(
@@ -58,4 +60,30 @@ export const handlers = [
       );
     }
   }),
+
+  rest.post(`${BASE_URL}/withdraws`, async (req, res, ctx) => {
+    const { account, amount } = await req.json();
+    const user = allUsers.flatMap((user) =>
+      user.account_number == account ? user : []
+    )[0];
+    const balance = (
+      parseFloat(user.balance) - parseFloat(amount)
+    ).toString();
+    if (parseFloat(amount) <= parseFloat(balance) && user.status == "active") {
+      const result = generateVoucherOfTransaction({account, amount, balance})
+      return res(
+        ctx.status(200),
+        ctx.json(result));
+    }
+
+    if (user.status == "inactive") {
+      return res(
+        ctx.status(409),
+        ctx.json({
+          Error: `Cannot complete transaction. Account ${user.account_number} is inactive`,
+        })
+      );
+    }
+  }),
+
 ];

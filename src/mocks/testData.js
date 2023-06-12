@@ -34,3 +34,16 @@ export const VOUCHER_SUCCESSFUL_DEPOSIT = {
   tx_id: "529479181280285",
   status: "Successfull",
 };
+
+export const SUCCESSFUL_WITHDRAW = {
+  account: "39525342",
+  amount: "150.00",
+};
+
+export const VOUCHER_SUCCESSFUL_WITHDRAW = {
+  account: "39525342",
+  amount: "150.00",
+  balance: "330.08",
+  tx_id: "529479181280285",
+  status: "Successfull",
+};
