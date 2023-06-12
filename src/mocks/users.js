@@ -18,7 +18,7 @@ export const users = [
     status: "active",
     user_id: "a1083a9c-43f8-4f84-b071-491c30fa1f20",
     ci: "YIVPMOR2",
-    balance: "15.00",
+    balance: "75.00",
     timestamp: "2021-05-28T03:10:15.213Z",
   },
   {
@@ -40,7 +40,7 @@ export const users = [
     status: "active",
     user_id: "6f1b389c-339c-41ed-9e43-79c835667109",
     ci: "EXGHPN5XC8I",
-    balance: "15.00",
+    balance: "480.00",
     timestamp: "2020-01-16T18:44:03.641Z",
   },
   {
@@ -62,7 +62,7 @@ export const users = [
     status: "active",
     user_id: "6ff3d2d3-0d11-4597-b585-eeaa7c576d73",
     ci: "NOLAUMF4",
-    balance: "15.00",
+    balance: "74.35",
     timestamp: "2015-09-27T05:16:53.044Z",
   },
   {
@@ -73,7 +73,7 @@ export const users = [
     status: "active",
     user_id: "f6811316-50aa-41a4-87c0-98d126f2ff00",
     ci: "XSRYDKQ6701",
-    balance: "15.00",
+    balance: "78.03",
     timestamp: "2022-02-27T21:26:13.398Z",
   },
   {
@@ -84,7 +84,7 @@ export const users = [
     status: "inactive",
     user_id: "5c8e438a-7433-4923-9419-dcdd4c588bbf",
     ci: "EJZKPARNTQC",
-    balance: "15.00",
+    balance: "45.07",
     timestamp: "2017-07-30T02:07:21.928Z",
   },
   {
@@ -95,7 +95,7 @@ export const users = [
     status: "active",
     user_id: "b90f49db-a5c5-4ffc-88b4-b5422e955a4f",
     ci: "PHOXGYTNXXX",
-    balance: "15.00",
+    balance: "15.89",
     timestamp: "2019-02-08T16:09:30.518Z",
   },
   {
