@@ -1,5 +1,3 @@
-import { expect } from "chai";
-import { describe } from "mocha";
 import { makeDeposit } from "../src/api/bank.js";
 import {VOUCHER_SUCCESSFUL_DEPOSIT,
   SUCCESSFUL_DEPOSIT,

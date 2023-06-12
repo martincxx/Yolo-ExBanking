@@ -1,5 +1,3 @@
-import { expect } from "chai";
-import { describe } from "mocha";
 import { getAccountBalance } from "../src/api/bank.js";
 import { EXISTING_ACCOUNT } from "../src/mocks/testData.js";
 
