@@ -1,0 +1,20 @@
+config:
+  target: "https://exbank.com/api/v1"
+  plugins:
+  phases:
+      # the time that the phase will last, in seconds
+    - duration: 10
+      # number of petitions per second during the defined duration
+      arrivalRate: 10
+      name: "Phase 1"
+  defaults:
+    headers:
+      Content-type: application/json
+scenarios:
+  - flow:
+    # getting all users
+    - get:
+        url: "/users"
+        expect:
+          - statusCode: 200
+          - contentType: json
