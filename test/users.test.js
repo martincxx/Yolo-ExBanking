@@ -1,15 +1,30 @@
 
 import { expect } from "chai";
 import { describe } from "mocha";
-import { getAllUsers } from "../api/bank.js";
+import { allUsers, newUser, getUserByCI } from "../src/api/bank.js";
+import { quentin } from "../src/mocks/new.js";
 
 describe("User testing", () => {
-    it("New User: Successful creation of a new  user", async()=>{
-        
-    })
+    it("EB01 - New User: Successful creation of a new  user", async () => {
+      const res = await newUser(quentin);
+      expect(res.status).to.equal(201);
+    });
   
-    it("Get all registered users 200 Ok", async () => {
-        const res = await getAllUsers()
-        expect(res.status).to.equal(200);
+    it("EB03 - Get all registered users", async () => {
+      const res = await allUsers();
+      expect(res.status).to.equal(200);
+    });
+
+    it("EB04 - Get a user by CI", async () => {
+      const res = await getUserByCI("YIVPMOR2");
+      const user = await res.json();
+      expect(res.status).to.equal(200);
+      expect(user.firstname).to.equal("Broderick");
+      expect(user.ci).to.equal("YIVPMOR2");
+    });
+
+    it("EB05: Get an error message when trying to fetch a non existing user", async () => {
+      const res = await getUserByCI("YIVPOR2");
+      expect(res.status).to.equal(404);
     });
 });

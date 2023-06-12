@@ -21,8 +21,8 @@ export const getUserByCI = async (userCI) =>{
   }
 }
 
-export const newUser = async()=>{
-  const response = await fetch(usersEndpoint);
+export const newUser = async(user)=>{
+  const response = await fetch(usersEndpoint, {method:"POST", body:JSON.stringify(user)});
   if (response) {
     return response;
   } else {
