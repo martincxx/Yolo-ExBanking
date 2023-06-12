@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "ExBanking API Testing ",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "\"\""
+    "test": "mocha ./test/* --require @babel/register"
   },
   "repository": {
     "type": "git",
-    "url": "\"\""
+    "url": "https://github.com/martincxx/Yolo-ExBanking.git"
   },
   "keywords": [
     "testing",
@@ -20,10 +21,17 @@
   "license": "ISC",
   "dependencies": {
     "chai": "^4.3.7",
+    "core-js": "^3.31.0",
     "mocha": "^10.2.0",
+    "node-fetch": "^3.3.1",
     "supertest": "^6.3.3"
   },
   "devDependencies": {
+    "@babel/cli": "^7.22.5",
+    "@babel/core": "^7.22.5",
+    "@babel/plugin-transform-runtime": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "@babel/register": "^7.22.5",
     "msw": "^1.2.2"
   }
 }
