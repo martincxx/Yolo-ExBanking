@@ -41,14 +41,10 @@ export const handlers = [
     const user = allUsers.flatMap((user) =>
       user.account_number == account ? user : []
     )[0];
-    const balance = (
-      parseFloat(user.balance) + parseFloat(amount)
-    ).toString();
+    const balance = (parseFloat(user.balance) + parseFloat(amount)).toString();
     if (parseFloat(amount) > 0 && user.status == "active") {
-      const result = generateVoucherOfTransaction({account, amount, balance})
-      return res(
-        ctx.status(200),
-        ctx.json(result));
+      const result = generateVoucherOfTransaction({ account, amount, balance });
+      return res(ctx.status(200), ctx.json(result));
     }
 
     if (user.status == "inactive") {
@@ -67,17 +63,16 @@ export const handlers = [
       user.account_number == account ? user : []
     )[0];
 
-    
-    if (parseFloat(amount) <= parseFloat(user.balance) && user.status == "active") {
+    if (
+      parseFloat(amount) <= parseFloat(user.balance) &&
+      user.status == "active"
+    ) {
       const balance = (
-      parseFloat(user.balance) - parseFloat(amount)
-    ).toString();
-    
-    
-      const result = generateVoucherOfTransaction({account, amount, balance})
-      return res(
-        ctx.status(200),
-        ctx.json(result));
+        parseFloat(user.balance) - parseFloat(amount)
+      ).toString();
+
+      const result = generateVoucherOfTransaction({ account, amount, balance });
+      return res(ctx.status(200), ctx.json(result));
     }
 
     if (user.status == "inactive") {
@@ -89,7 +84,7 @@ export const handlers = [
       );
     }
 
-    if(parseFloat(user.balance) < parseFloat(amount)){
+    if (parseFloat(user.balance) < parseFloat(amount)) {
       return res(
         ctx.status(409),
         ctx.json({
@@ -99,4 +94,14 @@ export const handlers = [
     }
   }),
 
+  rest.get(`${BASE_URL}/balance/:account`, (req, res, ctx) => {
+    const { account } = req.params;
+    const user = allUsers.flatMap((user) => (user.account_number == account ? user : []));
+
+    if (user.length == 1) {
+      return res(ctx.status(200), ctx.json(user[0]));
+    } else {
+      return res(ctx.status(404));
+    }
+  }),
 ];

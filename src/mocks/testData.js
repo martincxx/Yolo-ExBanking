@@ -5,6 +5,10 @@ export const NEW_VALID_USER = {
   ci: "ZOHIBAEGXO1"
 };
 
+export const EXISTING_ACCOUNT = {
+    account_number: "91342025",
+    balance: "75.00",
+  };
 
 export const EXISTING_USER = {
     username: "Leora_Gottlieb32",

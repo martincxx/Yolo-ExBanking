@@ -4,6 +4,7 @@ export const BASE_URL = "https://exbank.com";
 const usersEndpoint = `${BASE_URL}/users`;
 const depositsEndpoint = `${BASE_URL}/deposits`;
 const withdrawsEndpoint = `${BASE_URL}/withdraws`;
+const balanceEndpoint = `${BASE_URL}/balance`;
 
 export const allUsers = async () => {
   const response = await fetch(usersEndpoint);
@@ -51,6 +52,15 @@ export const withdrawMoney = async(transaction)=> {
     body: JSON.stringify(transaction),
   });
   if (response) {
+    return response;
+  } else {
+    throw new Error("Something went wrong!");
+  }
+}
+
+export const getAccountBalance = async(account)=>{
+  const response = await fetch(`${balanceEndpoint}/${account}`);
+  if (response.ok) {
     return response;
   } else {
     throw new Error("Something went wrong!");
