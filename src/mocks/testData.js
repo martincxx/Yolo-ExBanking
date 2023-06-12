@@ -17,7 +17,7 @@ export const EXISTING_USER = {
 export const WRONG_USER = "YIVPOR2"; 
 export const WRONG_ACCOUNT = "2846832688";
 
-export const FAILED_DEPOSIT_INACTIVE_ACCOUNT = {
+export const FAILED_INACTIVE_ACCOUNT = {
   account: "79622453",
   amount: "30.00"
 };
@@ -46,4 +46,9 @@ export const VOUCHER_SUCCESSFUL_WITHDRAW = {
   balance: "330.08",
   tx_id: "529479181280285",
   status: "Successfull",
+};
+
+export const FAILED_WITHDRAW_INSUFFICIENT_FUNDS = {
+  account: "28468326",
+  amount: "150.00",
 };

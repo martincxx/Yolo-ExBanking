@@ -3,7 +3,7 @@ import { describe } from "mocha";
 import { makeDeposit } from "../src/api/bank.js";
 import {VOUCHER_SUCCESSFUL_DEPOSIT,
   SUCCESSFUL_DEPOSIT,
-  FAILED_DEPOSIT_INACTIVE_ACCOUNT,
+  FAILED_INACTIVE_ACCOUNT,
 } from "../src/mocks/testData.js";
 
 describe("Deposit testing", ()=> {
@@ -18,7 +18,7 @@ describe("Deposit testing", ()=> {
 
 
     it("EB07 - Make a Deposit: Transaction not completed. Inactive account", async () => {
-      const res = await makeDeposit(FAILED_DEPOSIT_INACTIVE_ACCOUNT);
+      const res = await makeDeposit(FAILED_INACTIVE_ACCOUNT);
       expect(res.status).to.equal(409);
     });
 })
