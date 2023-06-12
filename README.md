@@ -52,4 +52,4 @@ The generated report is available in the *mochawesome-report* folder.
 npm run artillery:test
 ```
 
-The generated report is available in the *performance-report* folder.
+The generated report is available in the *performanceTests* folder.
