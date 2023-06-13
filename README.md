@@ -69,7 +69,7 @@ docker build -f Dockerfile -t yoloexbanking:latest .
 And now you can run Functional tests on a Docker container.
 
 ```bash
-docker run -i -v $(pwd):/app -t yoloexbanking:latest npm run artillery:test
+docker run -i -v $(pwd):/app -t yoloexbanking:latest npm run test
 ```
 
 Note that there is a second `Dockerfile` (Dockerfile.load) that will be used to test the non-functional tests.
